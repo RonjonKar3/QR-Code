@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code Generator</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  </head>
+  <body>
+    <div class="card">
+      <h2>QR Code Generator</h2>
+
+      <div class="input-group">
+        <label for="qrMode">QR Type</label>
+        <select id="qrMode">
+          <option value="text">Text / URL / Link</option>
+          <option value="wifi">WiFi Network</option>
+        </select>
+      </div>
+
+      <div class="input-group" id="generalInputGroup">
+        <label id="mainLabel" for="mainInput">Enter Text or URL</label>
+        <textarea
+          id="mainInput"
+          placeholder="https://google.com or Hello World!"
+          rows="3"
+        ></textarea>
+      </div>
+
+      <div id="wifiInputs" style="display: none">
+        <div class="input-group">
+          <label for="ssid">Network Name (SSID)</label>
+          <input type="text" id="ssid" placeholder="WiFi Name" />
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter Password" />
+        </div>
+        <div class="input-group">
+          <label for="encryption">Encryption</label>
+          <select id="encryption">
+            <option value="WPA">WPA/WPA2</option>
+            <option value="WEP">WEP</option>
+            <option value="nopass">None</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn-gen" id="generateBtn">Generate QR Code</button>
+
+      <div id="qrcode"></div>
+
+      <button id="downloadBtn" class="btn-dl">Download PNG</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
